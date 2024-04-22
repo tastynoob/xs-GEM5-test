@@ -1,6 +1,36 @@
 # xs GEM5 test
 
-### prepare
+## prepare
+
+#### Setup on Ubuntu 22.04
+If compiling gem5 on Ubuntu 22.04, or related Linux distributions, you may install all these dependencies using APT:
+
+``` shell
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
+    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
+    python3-dev libboost-all-dev pkg-config libsqlite3-dev
+```
+
+#### Setup on Ubuntu 20.04
+If compiling gem5 on Ubuntu 20.04, or related Linux distributions, you may install all these dependencies using APT:
+
+``` shell
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
+    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
+    python3-dev python-is-python3 libboost-all-dev pkg-config libsqlite3-dev
+```
+
+#### Setup on Ubuntu 18.04
+If compiling gem5 on Ubuntu 18.04, or related Linux distributions, you may install all these dependencies using APT:
+
+``` shell
+sudo apt install build-essential git m4 scons zlib1g zlib1g-dev \
+    libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
+    python3-dev python libboost-all-dev pkg-config libsqlite3-dev
+```
+
+#### clone and build
+
 ```sh
 # clone gem5
 git clone https://github.com/OpenXiangShan/GEM5.git && cd GEM5
@@ -15,8 +45,8 @@ scons build/RISCV/gem5.opt -j32 --gold-link
 # download difftest reference
 wget https://github.com/OpenXiangShan/GEM5/releases/download/2023Oct27/riscv64-nemu-interpreter-231008.so
 ```
-
-### run a simple test 
+---
+## run a simple test 
 ```sh
 ./build/RISCV/gem5.opt \
 ./configs/example/fs.py \
